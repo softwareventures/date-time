@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "@softwareventures/date-time",
   "version": "0.0.0-development",
   "description": "Data types and functions for working with abstract date-times",
@@ -86,5 +85,8 @@
   "release": {
     "extends": "@softwareventures/semantic-release-config"
   },
-  "packageManager": "yarn@4.0.2"
+  "packageManager": "yarn@4.0.2",
+  "publishConfig": {
+    "access": "public"
+  }
 }
