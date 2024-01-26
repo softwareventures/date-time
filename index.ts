@@ -444,3 +444,26 @@ export function compareFn(b: DateTimeOptions): (a: DateTimeOptions) => Compariso
  *
  * Curried variant of {@link compareDateTimes}. */
 export const compareDateTimesFn = compareFn;
+
+/** Returns `true` if `a` refers to a date and time before `b`. */
+export function before(a: DateTimeOptions, b: DateTimeOptions): boolean {
+    return toReferenceSeconds(a) < toReferenceSeconds(b);
+}
+
+/** Returns `true` if `a` refers to a date and time before `b`.
+ *
+ * Alias of {@link before}, useful for disambiguation from similar functions
+ * that operate on other date/time types. */
+export const dateTimeBefore = before;
+
+/** Returns `true` if `a` refers to a date and time before `b`.
+ *
+ * Curried variant of {@link before}. */
+export function beforeFn(b: DateTimeOptions): (a: DateTimeOptions) => boolean {
+    return a => before(a, b);
+}
+
+/** Returns `true` if `a` refers to a date and time before `b`.
+ *
+ * Curried variant of {@link dateTimeBefore}. */
+export const dateTimeBeforeFn = beforeFn;
