@@ -1,6 +1,7 @@
 /** @file Data types and functions for working with abstract date-times. */
 
 import * as date from "@softwareventures/date";
+import {hasProperty} from "unknown";
 
 /** An abstract date and time with no associated timezone.
  *
@@ -159,3 +160,37 @@ export const isLeapYear = date.isLeapYear;
  *   in the Gregorian calendar. The year 1 BCE was immediately followed by 1
  *   CE. */
 export const daysInMonth = date.daysInMonth;
+
+/** Returns `true` if the specified value has the shape of a {@link DateTime}
+ * object.
+ *
+ * The `year`, `month`, `day`, `hours`, and `minutes` fields may be
+ * non-integers or outside the valid range, meaning that the object may not
+ * represent a valid date and time.
+ *
+ * The `seconds` field may be non-finite, meaning that the object may not
+ * represent a valid date and time.
+ *
+ * To test if the object represents a valid date and time, call {@link isValid}
+ * or {@link isValidDateTime}.
+ */
+export function isDateTime(value: unknown): value is DateTime {
+    return (
+        typeof value === "object" &&
+        value != null &&
+        hasProperty(value, "type") &&
+        value.type === "DateTime" &&
+        hasProperty(value, "year") &&
+        typeof value.year === "number" &&
+        hasProperty(value, "month") &&
+        typeof value.month === "number" &&
+        hasProperty(value, "day") &&
+        typeof (value as {day: unknown}).day === "number" &&
+        hasProperty(value, "hours") &&
+        typeof value.hours === "number" &&
+        hasProperty(value, "minutes") &&
+        typeof value.minutes === "number" &&
+        hasProperty(value, "seconds") &&
+        typeof value.seconds === "number"
+    );
+}

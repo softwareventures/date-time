@@ -1026,6 +1026,7 @@ __metadata:
     ts-node: "npm:10.9.1"
     tslib: "npm:^2.5.0"
     typescript: "npm:4.9.5"
+    unknown: "npm:^0.2.5"
   languageName: unknown
   linkType: soft
 
