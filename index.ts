@@ -132,3 +132,16 @@ export const NOVEMBER = date.NOVEMBER; // eslint-disable-line @typescript-eslint
 /** The numeric representation of the month of December. */
 export const DECEMBER = date.DECEMBER; // eslint-disable-line @typescript-eslint/naming-convention
 
+/** Tests if the specified year is a leap year. Returns `true` if it is,
+ * otherwise `false`.
+ *
+ * Positive values represent years in the Common Era (CE/AD). For example
+ * `2020` represents 2020 CE, the year this module was first published to npm.
+ *
+ * Negative values or zero represent years before the Common Era (BCE/BC).
+ * Zero represents 1 BCE, `-1` represents 2 BCE, `-2` represents 3 BCE,
+ * etc.
+ *
+ * Note that there is no year zero in the Gregorian calendar. The year
+ * 1 BCE was immediately followed by 1 CE. */
+export const isLeapYear = date.isLeapYear;
