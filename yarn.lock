@@ -994,6 +994,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@softwareventures/date-time@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@softwareventures/date-time@npm:1.0.0"
+  dependencies:
+    "@softwareventures/date": "npm:^4.1.0"
+    "@softwareventures/nullable": "npm:^3.2.0"
+    "@softwareventures/ordered": "npm:^2.0.0"
+    "@softwareventures/time": "npm:^3.0.0"
+    is-integer: "npm:^1.0.7"
+    is-integer-in-range: "npm:^4.0.0"
+    tslib: "npm:^2.5.0"
+    unknown: "npm:^0.2.5"
+  checksum: 91d21a261a3ff488220311409633e5fbd8a801e5d6bd7b01ed21353ccf416b33e580eeecf68c7d09a7f60d5f8252db571599d480404fbefe0477f1969b83588d
+  languageName: node
+  linkType: hard
+
 "@softwareventures/date-time@workspace:.":
   version: 0.0.0-use.local
   resolution: "@softwareventures/date-time@workspace:."
@@ -1003,6 +1019,7 @@ __metadata:
     "@commitlint/cz-commitlint": "npm:17.4.4"
     "@softwareventures/date": "npm:^4.1.0"
     "@softwareventures/eslint-config": "npm:7.1.5"
+    "@softwareventures/format-date-time": "npm:^1.0.0"
     "@softwareventures/nullable": "npm:^3.2.0"
     "@softwareventures/ordered": "npm:^2.0.0"
     "@softwareventures/precise-commits": "npm:3.0.9"
@@ -1085,7 +1102,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@softwareventures/format-date@npm:^1.0.0":
+"@softwareventures/format-date-time@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@softwareventures/format-date-time@npm:1.0.0"
+  dependencies:
+    "@softwareventures/array": "npm:^7.0.0"
+    "@softwareventures/date-time": "npm:^1.0.0"
+    "@softwareventures/format-date": "npm:^1.0.4"
+    "@softwareventures/format-time": "npm:^1.0.1"
+    tslib: "npm:^2.5.0"
+  checksum: 891d69385284815d0ca49e5a89e1c5dd1d461ba626e878e36a48241bdd1bc467aaee082cdb33cc6aafdc3f45fc4d56335ed69e0e87345d2883c4fcbdc3453c91
+  languageName: node
+  linkType: hard
+
+"@softwareventures/format-date@npm:^1.0.0, @softwareventures/format-date@npm:^1.0.4":
   version: 1.0.4
   resolution: "@softwareventures/format-date@npm:1.0.4"
   dependencies:
@@ -1097,7 +1127,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@softwareventures/format-time@npm:^1.0.0":
+"@softwareventures/format-time@npm:^1.0.0, @softwareventures/format-time@npm:^1.0.1":
   version: 1.0.1
   resolution: "@softwareventures/format-time@npm:1.0.1"
   dependencies:
