@@ -361,3 +361,25 @@ export function fromReferenceSeconds(referenceSeconds: number): DateTime {
  *
  * @throws {Error} if `referenceSeconds` is non-finite. */
 export const dateTimeFromReferenceSeconds = fromReferenceSeconds;
+
+/** Returns `true` if `a` and `b` refer to the same date and time. */
+export function equal(a: DateTimeOptions, b: DateTimeOptions): boolean {
+    return toReferenceSeconds(a) === toReferenceSeconds(b);
+}
+
+/** Returns `true` if `a` and `b` refer to the same date and time.
+ *
+ * Alias of {@link equal}, for disambiguation from other equality functions. */
+export const dateTimesEqual = equal;
+
+/** Returns `true` if `a` and `b` refer to the same date and time.
+ *
+ * Curried variant of {@link equal}. */
+export function equalFn(b: DateTimeOptions): (a: DateTimeOptions) => boolean {
+    return a => equal(a, b);
+}
+
+/** Returns `true` if `a` and `b` refer to the same date and time.
+ *
+ * Curried variant of {@link dateTimesEqual}. */
+export const dateTimesEqualFn = equalFn;
