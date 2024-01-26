@@ -230,3 +230,16 @@ export function isValid(dateTime: DateTimeOptions): boolean {
         (dateTime.seconds ?? 0) < 60
     );
 }
+
+/** Tests if the specified {@link DateTime} object represents a valid date and
+ * time.
+ *
+ * Returns `true` if the `year`, `month`, `day`, `hour`, and `minute` fields
+ * are all integers inside the valid range, and the `seconds` field is a finite
+ * number inside the valid range.
+ *
+ * Alias of {@link isValid}, useful for disambiguation from similar functions
+ * that operate on other types.
+ *
+ * {@link DateTime}s returned by functions in this library are always valid. */
+export const isDateTimeValid = isValid;
