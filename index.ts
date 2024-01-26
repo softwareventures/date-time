@@ -284,6 +284,21 @@ export function dateTime(options: DateTimeOptions): DateTime {
     return fromReferenceSeconds(toReferenceSeconds(options));
 }
 
+/**
+ * Normalizes the specified {@link DateTime} object so that it represents a
+ * valid date.
+ *
+ * If the `month`, `day`, `hour`, `minute` or `seconds` fields are outside the
+ * valid range, then they will roll over into the next minute, hours, day,
+ * month or year.
+ *
+ * Alias of {@link dateTime}. Calling the function by this name instead might
+ * make code clearer in cases where the purpose is to normalize an existing
+ * `DateTime` object.
+ *
+ * @throws {Error} if any of the numeric fields are non-finite numbers. */
+export const normalize = dateTime;
+
 /** Converts the specified {@link DateTime} to a count of seconds since
  * the reference date-time of midnight on the morning of 1st January, 1 CE. */
 export function toReferenceSeconds(dateTime: DateTimeOptions): number {
