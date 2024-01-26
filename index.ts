@@ -6,6 +6,7 @@ import {hasProperty} from "unknown";
 import isIntegerInRange from "is-integer-in-range";
 import isInteger = require("is-integer");
 import {Comparator, Comparison} from "@softwareventures/ordered";
+import {JsDate} from "./js-date";
 
 /** An abstract date and time with no associated timezone.
  *
@@ -582,3 +583,23 @@ export function latestFn<T extends DateTimeOptions, U extends DateTimeOptions>(b
  *
  * Curried variant of {@link latestDateTime}. */
 export const latestDateTimeFn = latestFn;
+
+/** Returns the current date and time, according to UTC. */
+export function nowUtc(): DateTime {
+    const now = new JsDate();
+    return {
+        type: "DateTime",
+        year: now.getUTCFullYear(),
+        month: now.getUTCMonth() + 1,
+        day: now.getUTCDate(),
+        hours: now.getUTCHours(),
+        minutes: now.getUTCMinutes(),
+        seconds: now.getUTCSeconds() + 0.001 * now.getUTCMilliseconds()
+    };
+}
+
+/** Returns the current date and time, according to UTC.
+ *
+ * Alias of {@link nowUtc}, useful for disambiguation from similar functions
+ * that operate on other date/time types. */
+export const dateTimeNowUtc = nowUtc;
