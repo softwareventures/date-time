@@ -272,6 +272,18 @@ export function validate(dateTime: DateTimeOptions): void {
  * field is non-finite or outside the valid range. */
 export const validateDateTime = validate;
 
+/** Constructs a normalized {@link DateTime} object from the specified options.
+ *
+ * If the `month`, `day`, `hour`, `minute` or `seconds` fields are outside the
+ * valid range, then they will roll over into the next minute, hours, day,
+ * month or year.
+ *
+ * @throws {Error} if any of the numeric fields are non-finite numbers
+ */
+export function dateTime(options: DateTimeOptions): DateTime {
+    return fromReferenceSeconds(toReferenceSeconds(options));
+}
+
 /** Converts the specified {@link DateTime} to a count of seconds since
  * the reference date-time of midnight on the morning of 1st January, 1 CE. */
 export function toReferenceSeconds(dateTime: DateTimeOptions): number {
