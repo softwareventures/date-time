@@ -536,3 +536,26 @@ export function afterOrEqualFn(b: DateTimeOptions): (a: DateTimeOptions) => bool
  *
  * Curried variant of {@link dateTimeAfterOrEqual}. */
 export const dateTimeAfterOrEqualFn = afterOrEqualFn;
+
+/** Compares two {@link DateTime}s and returns the earlier of the two. */
+export function earliest<T extends DateTimeOptions, U extends DateTimeOptions>(a: T, b: U): T | U {
+    return after(a, b) ? b : a;
+}
+
+/** Compares two {@link DateTime}s and returns the earlier of the two.
+ *
+ * Alias of {@link earliest}, useful for disambiguation from similar functions
+ * that operate on other date/time types. */
+export const earliestDateTime = earliest;
+
+/** Compares two {@link DateTime}s and returns the earlier of the two.
+ *
+ * Curried variant of {@link earliest}. */
+export function earliestFn<T extends DateTimeOptions, U extends DateTimeOptions>(b: U): (a: T) => T | U {
+    return a => earliest(a, b);
+}
+
+/** Compares two {@link DateTime}s and returns the earlier of the two.
+ *
+ * Curried variant of {@link earliestDateTime}. */
+export const earliestDateTimeFn = earliestFn;
