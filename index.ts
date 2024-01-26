@@ -559,3 +559,26 @@ export function earliestFn<T extends DateTimeOptions, U extends DateTimeOptions>
  *
  * Curried variant of {@link earliestDateTime}. */
 export const earliestDateTimeFn = earliestFn;
+
+/** Compares two {@link DateTime}s and returns the later of the two. */
+export function latest<T extends DateTimeOptions, U extends DateTimeOptions>(a: T, b: U): T | U {
+    return before(a, b) ? b : a;
+}
+
+/** Compares two {@link DateTime}s and returns the later of the two.
+ *
+ * Alias of {@link latest}, useful for disambiguation from similar functions
+ * that operate on other date/time types. */
+export const latestDateTime = latest;
+
+/** Compares two {@link DateTime}s and returns the later of the two.
+ *
+ * Curried variant of {@link latest}. */
+export function latestFn<T extends DateTimeOptions, U extends DateTimeOptions>(b: U): (a: T) => T | U {
+    return a => latest(a, b);
+}
+
+/** Compares two {@link DateTime}s and returns the later of the two.
+ *
+ * Curried variant of {@link latestDateTime}. */
+export const latestDateTimeFn = latestFn;
