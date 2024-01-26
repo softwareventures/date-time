@@ -5,6 +5,7 @@ import * as time from "@softwareventures/time";
 import {hasProperty} from "unknown";
 import isIntegerInRange from "is-integer-in-range";
 import isInteger = require("is-integer");
+import {Comparator, Comparison} from "@softwareventures/ordered";
 
 /** An abstract date and time with no associated timezone.
  *
@@ -405,3 +406,41 @@ export function notEqualFn(b: DateTimeOptions): (a: DateTimeOptions) => boolean 
  *
  * Curried variant of {@link dateTimesNotEqual}. */
 export const dateTimesNotEqualFn = notEqualFn;
+
+/** Compares two {@link DateTime}s and returns a {@link Comparison} specifying
+ * if `a` is before, equal to, or after `b`. */
+export const compare: Comparator<DateTimeOptions> = (a, b) => {
+    const ad = toReferenceSeconds(a);
+    const bd = toReferenceSeconds(b);
+
+    if (ad < bd) {
+        return Comparison.before;
+    } else if (ad > bd) {
+        return Comparison.after;
+    } else if (ad === bd) {
+        return Comparison.equal;
+    } else {
+        return Comparison.undefined;
+    }
+};
+
+/** Compares two {@link DateTime}s and returns a {@link Comparison} specifying
+ * if `a` is before, equal to, or after `b`.
+ *
+ * Alias of {@link compare}, useful for disambiguation from other comparison
+ * functions. */
+export const compareDateTimes = compare;
+
+/** Compares two {@link DateTime}s and returns a {@link Comparison} specifying
+ * if `a` is before, equal to, or after `b`.
+ *
+ * Curried variant of {@link compare}. */
+export function compareFn(b: DateTimeOptions): (a: DateTimeOptions) => Comparison {
+    return a => compare(a, b);
+}
+
+/** Compares two {@link DateTime}s and returns a {@link Comparison} specifying
+ * if `a` is before, equal to, or after `b`.
+ *
+ * Curried variant of {@link compareDateTimes}. */
+export const compareDateTimesFn = compareFn;

@@ -1003,6 +1003,7 @@ __metadata:
     "@commitlint/cz-commitlint": "npm:17.4.4"
     "@softwareventures/date": "npm:^4.1.0"
     "@softwareventures/eslint-config": "npm:7.1.5"
+    "@softwareventures/ordered": "npm:^2.0.0"
     "@softwareventures/precise-commits": "npm:3.0.9"
     "@softwareventures/prettier-config": "npm:4.0.0"
     "@softwareventures/semantic-release-config": "npm:3.1.0"
@@ -1124,7 +1125,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@softwareventures/ordered@npm:^0.2.1 || ^1.0.0 || ^2.0.0, @softwareventures/ordered@npm:^1.0.0 || ^2.0.0, @softwareventures/ordered@npm:^1.1.0 || ^2.0.0":
+"@softwareventures/ordered@npm:^0.2.1 || ^1.0.0 || ^2.0.0, @softwareventures/ordered@npm:^1.0.0 || ^2.0.0, @softwareventures/ordered@npm:^1.1.0 || ^2.0.0, @softwareventures/ordered@npm:^2.0.0":
   version: 2.0.0
   resolution: "@softwareventures/ordered@npm:2.0.0"
   dependencies:
