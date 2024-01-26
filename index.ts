@@ -383,3 +383,25 @@ export function equalFn(b: DateTimeOptions): (a: DateTimeOptions) => boolean {
  *
  * Curried variant of {@link dateTimesEqual}. */
 export const dateTimesEqualFn = equalFn;
+
+/** Returns `true` if `a` and `b` refer to a different date and time. */
+export function notEqual(a: DateTimeOptions, b: DateTimeOptions): boolean {
+    return toReferenceSeconds(a) !== toReferenceSeconds(b);
+}
+
+/** Returns `true` if `a` and `b` refer to a different date and time.
+ *
+ * Alias of {@link notEqual}, for disambiguation from other inequality functions. */
+export const dateTimesNotEqual = notEqual;
+
+/** Returns `true` if `a` and `b` refer to a different date and time.
+ *
+ * Curried variant of {@link notEqual}. */
+export function notEqualFn(b: DateTimeOptions): (a: DateTimeOptions) => boolean {
+    return a => notEqual(a, b);
+}
+
+/** Returns `true` if `a` and `b` refer to a different date and time.
+ *
+ * Curried variant of {@link dateTimesNotEqual}. */
+export const dateTimesNotEqualFn = notEqualFn;
