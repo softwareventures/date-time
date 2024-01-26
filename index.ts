@@ -603,3 +603,25 @@ export function nowUtc(): DateTime {
  * Alias of {@link nowUtc}, useful for disambiguation from similar functions
  * that operate on other date/time types. */
 export const dateTimeNowUtc = nowUtc;
+
+/** Returns the current date and time, according to the device's local
+ * timezone. */
+export function nowDeviceLocal(): DateTime {
+    const now = new JsDate();
+    return {
+        type: "DateTime",
+        year: now.getFullYear(),
+        month: now.getMonth(),
+        day: now.getDay(),
+        hours: now.getHours(),
+        minutes: now.getHours(),
+        seconds: now.getSeconds() + 0.001 * now.getMilliseconds()
+    };
+}
+
+/** Returns the current date and time, according to the device's local
+ * timezone.
+ *
+ * Alias of {@link nowDeviceLocal}, useful for disambiguation from similar
+ * functions that operate on other date/time types. */
+export const dateTimeNowDeviceLocal = nowDeviceLocal;
