@@ -490,3 +490,26 @@ export function beforeOrEqualFn(b: DateTimeOptions): (a: DateTimeOptions) => boo
  *
  * Curried variant of {@link dateTimeBeforeOrEqual}. */
 export const dateTimeBeforeOrEqualFn = beforeOrEqualFn;
+
+/** Returns `true` if `a` refers to a date and time after `b`. */
+export function after(a: DateTimeOptions, b: DateTimeOptions): boolean {
+    return toReferenceSeconds(a) > toReferenceSeconds(b);
+}
+
+/** Returns `true` if `a` refers to a date and time after `b`.
+ *
+ * Alias of {@link after}, useful for disambiguation from similar functions
+ * that operate on other date/time types. */
+export const dateTimeAfter = after;
+
+/** Returns `true` if `a` refers to a date and time after `b`.
+ *
+ * Curried variant of {@link after}. */
+export function afterFn(b: DateTimeOptions): (a: DateTimeOptions) => boolean {
+    return a => after(a, b);
+}
+
+/** Returns `true` if `a` refers to a date and time after `b`.
+ *
+ * Curried variant of {@link dateTimeAfter}. */
+export const dateTimeAfterFn = afterFn;
