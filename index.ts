@@ -243,3 +243,30 @@ export function isValid(dateTime: DateTimeOptions): boolean {
  *
  * {@link DateTime}s returned by functions in this library are always valid. */
 export const isDateTimeValid = isValid;
+
+/** Asserts that the specified {@link DateTime} object represents a valid date
+ * and time.
+ *
+ * {@DateTime}s returned by functions in this library are always valid.
+ *
+ * @throws {Error} if any of the `year`, `month`, `day`, `hours`, or `minutes`
+ * fields are non-integers or outside the valid range, or if the `seconds`
+ * field is non-finite or outside the valid range. */
+export function validate(dateTime: DateTimeOptions): void {
+    if (!isValid(dateTime)) {
+        throw new Error("Invalid date-time");
+    }
+}
+
+/** Asserts that the specified {@link DateTime} object represents a valid date
+ * and time.
+ *
+ * {@DateTime}s returned by functions in this library are always valid.
+ *
+ * Alias of {@link validate}, useful for disambiguation from similar functions
+ * that operate on other types.
+ *
+ * @throws {Error} if any of the `year`, `month`, `day`, `hours`, or `minutes`
+ * fields are non-integers or outside the valid range, or if the `seconds`
+ * field is non-finite or outside the valid range. */
+export const validateDateTime = validate;
