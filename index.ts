@@ -7,6 +7,7 @@ import isIntegerInRange from "is-integer-in-range";
 import isInteger = require("is-integer");
 import {Comparator, Comparison} from "@softwareventures/ordered";
 import {JsDate} from "./js-date";
+import {mapNullable} from "@softwareventures/nullable";
 
 /** An abstract date and time with no associated timezone.
  *
@@ -625,3 +626,52 @@ export function nowDeviceLocal(): DateTime {
  * Alias of {@link nowDeviceLocal}, useful for disambiguation from similar
  * functions that operate on other date/time types. */
 export const dateTimeNowDeviceLocal = nowDeviceLocal;
+
+/** Parses a {@link DateTime} from text in ISO 8601 format.
+ *
+ * The ISO 8601 text must not specify a time zone offset.
+ *
+ * If the specified text is not a valid ISO 8601 date-time then this function
+ * returns `null`.
+ *
+ * Both extended `YYYY-MM-DDTHH:MM:SS.ssss` and basic
+ * `YYYYMMDDTHHMMSS.ssss` ISO 8601 formats are accepted.
+ *
+ * As an exception to ISO8601, the `"T"` delimiter between the date and time
+ * may be replaced by any sequence of whitespace characters. */
+export function parseIso8601(text: string): DateTime | null {
+    const match =
+        /^([+-]?\d{4,})-?(\d{2})-?(\d{2})(?:T|\s+)(\d{2})(?::?(\d{2})(?::?(\d{2}(?:\.\d*)?))?)?$/iu.exec(
+            text
+        );
+
+    if (match?.[1] == null || match[2] == null || match[3] == null || match[4] == null) {
+        return null;
+    }
+
+    const year = parseInt(match[1], 10);
+    const month = parseInt(match[2], 10);
+    const day = parseInt(match[3], 10);
+    const hours = parseInt(match[4], 10);
+    const minutes = mapNullable(match[5], text => parseInt(text, 10)) ?? 0;
+    const seconds = mapNullable(match[6], text => parseFloat(text.replace(",", "."))) ?? 0;
+
+    return dateTime({year, month, day, hours, minutes, seconds});
+}
+
+/** Parses a {@link DateTime} from text in ISO 8601 format.
+ *
+ * The ISO 8601 text must not specify a time zone offset.
+ *
+ * If the specified text is not a valid ISO 8601 date-time then this function
+ * returns `null`.
+ *
+ * Both extended `YYYY-MM-DDTHH:MM:SS.ssss` and basic
+ * `YYYYMMDDTHHMMSS.ssss` ISO 8601 formats are accepted.
+ *
+ * As an exception to ISO8601, the `"T"` delimiter between the date and time
+ * may be replaced by any sequence of whitespace characters.
+ *
+ * Alias of {@link parseIso8601}, useful for disambiguation from similar
+ * functions that operate on other date/time types. */
+export const parseDateTimeIso8601 = parseIso8601;
