@@ -5,9 +5,10 @@ import * as time from "@softwareventures/time";
 import {hasProperty} from "unknown";
 import isIntegerInRange from "is-integer-in-range";
 import isInteger = require("is-integer");
-import {Comparator, Comparison} from "@softwareventures/ordered";
-import {JsDate} from "./js-date";
+import type {Comparator} from "@softwareventures/ordered";
+import {Comparison} from "@softwareventures/ordered";
 import {mapNullable} from "@softwareventures/nullable";
+import {JsDate} from "./js-date";
 
 /** An abstract date and time with no associated timezone.
  *
@@ -553,7 +554,9 @@ export const earliestDateTime = earliest;
 /** Compares two {@link DateTime}s and returns the earlier of the two.
  *
  * Curried variant of {@link earliest}. */
-export function earliestFn<T extends DateTimeOptions, U extends DateTimeOptions>(b: U): (a: T) => T | U {
+export function earliestFn<T extends DateTimeOptions, U extends DateTimeOptions>(
+    b: U
+): (a: T) => T | U {
     return a => earliest(a, b);
 }
 
@@ -576,7 +579,9 @@ export const latestDateTime = latest;
 /** Compares two {@link DateTime}s and returns the later of the two.
  *
  * Curried variant of {@link latest}. */
-export function latestFn<T extends DateTimeOptions, U extends DateTimeOptions>(b: U): (a: T) => T | U {
+export function latestFn<T extends DateTimeOptions, U extends DateTimeOptions>(
+    b: U
+): (a: T) => T | U {
     return a => latest(a, b);
 }
 
