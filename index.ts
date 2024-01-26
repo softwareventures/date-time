@@ -1,9 +1,10 @@
 /** @file Data types and functions for working with abstract date-times. */
 
 import * as date from "@softwareventures/date";
+import * as time from "@softwareventures/time";
 import {hasProperty} from "unknown";
-import isInteger = require("is-integer");
 import isIntegerInRange from "is-integer-in-range";
+import isInteger = require("is-integer");
 
 /** An abstract date and time with no associated timezone.
  *
@@ -270,3 +271,24 @@ export function validate(dateTime: DateTimeOptions): void {
  * fields are non-integers or outside the valid range, or if the `seconds`
  * field is non-finite or outside the valid range. */
 export const validateDateTime = validate;
+
+/** Converts the specified {@link DateTime} to a count of seconds since
+ * the reference date-time of midnight on the morning of 1st January, 1 CE. */
+export function toReferenceSeconds(dateTime: DateTimeOptions): number {
+    return (
+        date.toReferenceDays({year: dateTime.year, month: dateTime.month, day: dateTime.day}) *
+            86400 +
+        time.toReferenceSeconds({
+            hours: dateTime.hours,
+            minutes: dateTime.minutes ?? 0,
+            seconds: dateTime.seconds ?? 0
+        })
+    );
+}
+
+/** Converts the specified {@link DateTime} to a count of seconds since
+ * the reference date-time of midnight on the morning of 1st January, 1 CE.
+ *
+ * Alias of {@link toReferenceSeconds}, useful for disambiguation from similar
+ * functions that operate on other types. */
+export const dateTimeToReferenceSeconds = toReferenceSeconds;

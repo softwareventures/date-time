@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@softwareventures/date": "^4.1.0",
+    "@softwareventures/time": "^3.0.0",
     "is-integer": "^1.0.7",
     "is-integer-in-range": "^4.0.0",
     "tslib": "^2.5.0",

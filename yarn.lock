@@ -983,7 +983,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@softwareventures/array@npm:^3.10.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0":
+"@softwareventures/array@npm:^3.10.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0, @softwareventures/array@npm:^7.0.0":
   version: 7.0.0
   resolution: "@softwareventures/array@npm:7.0.0"
   dependencies:
@@ -1006,6 +1006,7 @@ __metadata:
     "@softwareventures/precise-commits": "npm:3.0.9"
     "@softwareventures/prettier-config": "npm:4.0.0"
     "@softwareventures/semantic-release-config": "npm:3.1.0"
+    "@softwareventures/time": "npm:^3.0.0"
     "@softwareventures/tsconfig": "npm:7.0.0"
     "@types/is-integer": "npm:^1"
     "@types/node": "npm:17.0.45"
@@ -1094,6 +1095,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@softwareventures/format-time@npm:^1.0.0":
+  version: 1.0.1
+  resolution: "@softwareventures/format-time@npm:1.0.1"
+  dependencies:
+    "@softwareventures/array": "npm:^7.0.0"
+    "@softwareventures/time": "npm:^2.0.0 || ^3.0.0"
+    tslib: "npm:^2.5.0"
+  checksum: dd899b4c2ae7959591f29aca635a2c5d088fa044159b2cdd34f23075def132ce4402dded46cad62e4b2826fbc4a8e2f99c2a736a2e955c96bc2333fa5050b60a
+  languageName: node
+  linkType: hard
+
 "@softwareventures/nullable@npm:3.1.0":
   version: 3.1.0
   resolution: "@softwareventures/nullable@npm:3.1.0"
@@ -1103,7 +1115,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@softwareventures/nullable@npm:^1.0.0 || ^2.0.0 || ^3.0.0, @softwareventures/nullable@npm:^2.0.0 || ^3.0.0":
+"@softwareventures/nullable@npm:^1.0.0 || ^2.0.0 || ^3.0.0, @softwareventures/nullable@npm:^2.0.0 || ^3.0.0, @softwareventures/nullable@npm:^3.2.0":
   version: 3.2.0
   resolution: "@softwareventures/nullable@npm:3.2.0"
   dependencies:
@@ -1112,7 +1124,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@softwareventures/ordered@npm:^0.2.1 || ^1.0.0 || ^2.0.0, @softwareventures/ordered@npm:^1.1.0 || ^2.0.0":
+"@softwareventures/ordered@npm:^0.2.1 || ^1.0.0 || ^2.0.0, @softwareventures/ordered@npm:^1.0.0 || ^2.0.0, @softwareventures/ordered@npm:^1.1.0 || ^2.0.0":
   version: 2.0.0
   resolution: "@softwareventures/ordered@npm:2.0.0"
   dependencies:
@@ -1162,6 +1174,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@softwareventures/time@npm:^2.0.0 || ^3.0.0, @softwareventures/time@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@softwareventures/time@npm:3.0.0"
+  dependencies:
+    "@softwareventures/format-time": "npm:^1.0.0"
+    "@softwareventures/nullable": "npm:^3.2.0"
+    "@softwareventures/ordered": "npm:^1.0.0 || ^2.0.0"
+    "@types/is-integer": "npm:1.0.2"
+    is-integer: "npm:^1.0.7"
+    is-integer-in-range: "npm:^3.0.1 || ^4.0.0"
+    tslib: "npm:^2.1.0"
+    unknown: "npm:^0.2.5"
+  checksum: 8d97a82186082b1acfb5aa9ac08beff35db7ff4fb0a41dde6be4a432a3947d579bec92365505145c2920470075317b8be8de008381670488da309bf66061c844
+  languageName: node
+  linkType: hard
+
 "@softwareventures/tsconfig@npm:7.0.0":
   version: 7.0.0
   resolution: "@softwareventures/tsconfig@npm:7.0.0"
@@ -1206,7 +1234,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/is-integer@npm:^1, @types/is-integer@npm:^1.0.0, @types/is-integer@npm:^1.0.2":
+"@types/is-integer@npm:1.0.2, @types/is-integer@npm:^1, @types/is-integer@npm:^1.0.0, @types/is-integer@npm:^1.0.2":
   version: 1.0.2
   resolution: "@types/is-integer@npm:1.0.2"
   checksum: 412ff56482710d981218916e86e36c4d8947e6866707f92e880d4396ae8f36dacd4e694bb766ecdfe985c3530a14d5624cb28382a413f899a82c5e98ef625000
@@ -4512,7 +4540,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-integer-in-range@npm:^1.0.0 || ^2.0.0 || ^3.0.0 || ^4.0.0, is-integer-in-range@npm:^4.0.0":
+"is-integer-in-range@npm:^1.0.0 || ^2.0.0 || ^3.0.0 || ^4.0.0, is-integer-in-range@npm:^3.0.1 || ^4.0.0, is-integer-in-range@npm:^4.0.0":
   version: 4.0.0
   resolution: "is-integer-in-range@npm:4.0.0"
   dependencies:
