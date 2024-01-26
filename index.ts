@@ -2,6 +2,8 @@
 
 import * as date from "@softwareventures/date";
 import {hasProperty} from "unknown";
+import isInteger = require("is-integer");
+import isIntegerInRange from "is-integer-in-range";
 
 /** An abstract date and time with no associated timezone.
  *
@@ -192,5 +194,26 @@ export function isDateTime(value: unknown): value is DateTime {
         typeof value.minutes === "number" &&
         hasProperty(value, "seconds") &&
         typeof value.seconds === "number"
+    );
+}
+
+/** Tests if the specified {@link DateTime} object represents a valid date and
+ * time.
+ *
+ * Returns `true` if the `year`, `month`, `day`, `hour`, and `minute` fields
+ * are all integers inside the valid range, and the `seconds` field is a finite
+ * number inside the valid range.
+ *
+ * {@link DateTime}s returned by functions in this library are always valid. */
+export function isValid(dateTime: DateTimeOptions): boolean {
+    return (
+        (!hasProperty(dateTime, "type") || dateTime.type === "DateTime") &&
+        isInteger(dateTime.year) &&
+        isIntegerInRange(dateTime.month, JANUARY, DECEMBER) &&
+        isIntegerInRange(dateTime.day, 1, daysInMonth(dateTime.month, dateTime.year)) &&
+        isIntegerInRange(dateTime.hours, 0, 23) &&
+        isIntegerInRange(dateTime.minutes ?? 0, 0, 59) &&
+        (dateTime.seconds ?? 0) >= 0 &&
+        (dateTime.seconds ?? 0) < 60
     );
 }
