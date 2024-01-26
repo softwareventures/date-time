@@ -292,3 +292,30 @@ export function toReferenceSeconds(dateTime: DateTimeOptions): number {
  * Alias of {@link toReferenceSeconds}, useful for disambiguation from similar
  * functions that operate on other types. */
 export const dateTimeToReferenceSeconds = toReferenceSeconds;
+
+/** Creates a {@link DateTime} corresponding to the specified count of the
+ * number of seconds since the reference date-time of midnight on the morning
+ * of 1st January, 1 CE.
+ *
+ * @throws {Error} if `referenceSeconds` is non-finite. */
+export function fromReferenceSeconds(referenceSeconds: number): DateTime {
+    if (!isFinite(referenceSeconds)) {
+        throw new Error("Invalid date-time");
+    }
+    const referenceDays = Math.floor(referenceSeconds / 86400);
+    const {year, month, day} = date.fromReferenceDays(referenceDays);
+    const referenceSecondsInDays =
+        (86400 + ((referenceSeconds - referenceDays * 86400) % 86400)) % 86400;
+    const {hours, minutes, seconds} = time.fromReferenceSeconds(referenceSecondsInDays);
+    return {type: "DateTime", year, month, day, hours, minutes, seconds};
+}
+
+/** Creates a {@link DateTime} corresponding to the specified count of the
+ * number of seconds since the reference date-time of midnight on the morning
+ * of 1st January, 1 CE.
+ *
+ * Alias of {@link fromReferenceSeconds}, useful for disambiguation from
+ * similar functions that operate on other types.
+ *
+ * @throws {Error} if `referenceSeconds` is non-finite. */
+export const dateTimeFromReferenceSeconds = fromReferenceSeconds;
