@@ -729,3 +729,18 @@ export const formatIso8601 = format.iso8601;
  *
  * For other formats, see `@softwareventures/format-date-time`. */
 export const formatDateTimeIso8601 = format.iso8601;
+
+/** Formats the specified {@link DateTime} as ISO 8601 extended, rounded down
+ * to the next lower second, and with the time delimited by a space `" "`.
+ *
+ * This format is intended to be reasonable for display to humans. */
+export const formatHumanIso8601 = format.humanIso8601;
+
+/** Formats the specified {@link DateTime} as ISO 8601 extended, rounded down
+ * to the next lower second, and with the time delimited by a space `" "`.
+ *
+ * This format is intended to be reasonable for display to humans.
+ *
+ * Alias of {@link formatHumanIso8601}, useful for disambiguation from similar
+ * functions that operate on other date/time types. */
+export const formatDateTimeHumanIso8601 = format.humanIso8601;
