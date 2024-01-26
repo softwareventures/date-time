@@ -197,6 +197,19 @@ export function isDateTime(value: unknown): value is DateTime {
     );
 }
 
+/** Tests if the specified value is a {@link DateTime} object representing a
+ * valid date and time.
+ *
+ * Returns `true` if the value has the shape of a `DateTime` object, the
+ * `year`, `month`, `day`, `hours` and `minutes` fields are all integers inside
+ * the valid range, and the `seconds` field is a finite number inside the valid
+ * range.
+ *
+ * {@link DateTime}s returned by functions in this library are always valid. */
+export function isValidDateTime(value: unknown): value is DateTime {
+    return isDateTime(value) && isValid(value);
+}
+
 /** Tests if the specified {@link DateTime} object represents a valid date and
  * time.
  *
