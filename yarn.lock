@@ -47,15 +47,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:17.4.4":
-  version: 17.4.4
-  resolution: "@commitlint/cli@npm:17.4.4"
+"@commitlint/cli@npm:17.8.1":
+  version: 17.8.1
+  resolution: "@commitlint/cli@npm:17.8.1"
   dependencies:
-    "@commitlint/format": "npm:^17.4.4"
-    "@commitlint/lint": "npm:^17.4.4"
-    "@commitlint/load": "npm:^17.4.4"
-    "@commitlint/read": "npm:^17.4.4"
-    "@commitlint/types": "npm:^17.4.4"
+    "@commitlint/format": "npm:^17.8.1"
+    "@commitlint/lint": "npm:^17.8.1"
+    "@commitlint/load": "npm:^17.8.1"
+    "@commitlint/read": "npm:^17.8.1"
+    "@commitlint/types": "npm:^17.8.1"
     execa: "npm:^5.0.0"
     lodash.isfunction: "npm:^3.0.9"
     resolve-from: "npm:5.0.0"
@@ -63,16 +63,16 @@ __metadata:
     yargs: "npm:^17.0.0"
   bin:
     commitlint: cli.js
-  checksum: 144c0f048367eb06fecc4eb22be014fa1a106c881ee8e16d16697c788e0917451f8e7f80516452f40ebdd47ca586bb03707d9d2f0976c92cda71cd77b72d223c
+  checksum: d8f4f3d8601703271f6cef15f5a35864de1e4f949fba7a8bf5c8be786ed4d231208b7322068c5126d08d0885ecfec77cf0fcdc12ae59e72b514d68dbccd4451f
   languageName: node
   linkType: hard
 
-"@commitlint/config-conventional@npm:17.4.4":
-  version: 17.4.4
-  resolution: "@commitlint/config-conventional@npm:17.4.4"
+"@commitlint/config-conventional@npm:17.8.1":
+  version: 17.8.1
+  resolution: "@commitlint/config-conventional@npm:17.8.1"
   dependencies:
-    conventional-changelog-conventionalcommits: "npm:^5.0.0"
-  checksum: 58739cc4e48b00925ba3e171a90fdcfe2b36906feebc247d0362afb062915f4b711c2ab1ba5c4cba35e53bcc63cae444e905a3ab551a0ea7058232f0bf58b8e3
+    conventional-changelog-conventionalcommits: "npm:^6.1.0"
+  checksum: 70abdc9f1361386060b30620decc376bc33ff0c27c6f2f89511df1d53127d238af7c3409db22651282caa614d54b91b1f5e35905d12b1f5db70603c351f6e482
   languageName: node
   linkType: hard
 
@@ -96,24 +96,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cz-commitlint@npm:17.4.4":
-  version: 17.4.4
-  resolution: "@commitlint/cz-commitlint@npm:17.4.4"
+"@commitlint/cz-commitlint@npm:17.8.1":
+  version: 17.8.1
+  resolution: "@commitlint/cz-commitlint@npm:17.8.1"
   dependencies:
-    "@commitlint/ensure": "npm:^17.4.4"
-    "@commitlint/load": "npm:^17.4.4"
-    "@commitlint/types": "npm:^17.4.4"
+    "@commitlint/ensure": "npm:^17.8.1"
+    "@commitlint/load": "npm:^17.8.1"
+    "@commitlint/types": "npm:^17.8.1"
     chalk: "npm:^4.1.0"
     lodash.isplainobject: "npm:^4.0.6"
-    word-wrap: "npm:^1.2.3"
+    word-wrap: "npm:^1.2.5"
   peerDependencies:
     commitizen: ^4.0.3
     inquirer: ^8.0.0
-  checksum: a5d9c287cf8a324ead118e62549dd798373a7f45416ed69aa870ca6f90a4fc1f0b5fb68e4cfaef3d6f59e5ab660ee69b9beb790c4283e5c260c2f492248a0737
+  checksum: 2ea5073838b1a060ff06a48f6d9cc0735725dabea9807beeba357035a0603a5125aa3238a8db0e6fc4c7e5d1255b420b51c2236b09aa86e4ab8735549b4da90a
   languageName: node
   linkType: hard
 
-"@commitlint/ensure@npm:^17.4.4, @commitlint/ensure@npm:^17.8.1":
+"@commitlint/ensure@npm:^17.8.1":
   version: 17.8.1
   resolution: "@commitlint/ensure@npm:17.8.1"
   dependencies:
@@ -141,7 +141,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/format@npm:^17.4.4":
+"@commitlint/format@npm:^17.8.1":
   version: 17.8.1
   resolution: "@commitlint/format@npm:17.8.1"
   dependencies:
@@ -161,7 +161,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/lint@npm:^17.4.4":
+"@commitlint/lint@npm:^17.8.1":
   version: 17.8.1
   resolution: "@commitlint/lint@npm:17.8.1"
   dependencies:
@@ -192,7 +192,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/load@npm:^17.4.4":
+"@commitlint/load@npm:^17.8.1":
   version: 17.8.1
   resolution: "@commitlint/load@npm:17.8.1"
   dependencies:
@@ -232,7 +232,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/read@npm:^17.4.4":
+"@commitlint/read@npm:^17.8.1":
   version: 17.8.1
   resolution: "@commitlint/read@npm:17.8.1"
   dependencies:
@@ -302,7 +302,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/types@npm:^17.4.4, @commitlint/types@npm:^17.8.1":
+"@commitlint/types@npm:^17.8.1":
   version: 17.8.1
   resolution: "@commitlint/types@npm:17.8.1"
   dependencies:
@@ -1014,9 +1014,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@softwareventures/date-time@workspace:."
   dependencies:
-    "@commitlint/cli": "npm:17.4.4"
-    "@commitlint/config-conventional": "npm:17.4.4"
-    "@commitlint/cz-commitlint": "npm:17.4.4"
+    "@commitlint/cli": "npm:17.8.1"
+    "@commitlint/config-conventional": "npm:17.8.1"
+    "@commitlint/cz-commitlint": "npm:17.8.1"
     "@softwareventures/date": "npm:^4.1.0"
     "@softwareventures/eslint-config": "npm:7.1.5"
     "@softwareventures/format-date-time": "npm:^1.0.0"
@@ -2492,7 +2492,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"conventional-changelog-conventionalcommits@npm:^4.6.3 || ^5.0.0, conventional-changelog-conventionalcommits@npm:^5.0.0":
+"conventional-changelog-conventionalcommits@npm:^4.6.3 || ^5.0.0":
   version: 5.0.0
   resolution: "conventional-changelog-conventionalcommits@npm:5.0.0"
   dependencies:
@@ -2500,6 +2500,15 @@ __metadata:
     lodash: "npm:^4.17.15"
     q: "npm:^1.5.1"
   checksum: 02cc9313b44953332e9d45833615675cbc4d0f4129b27ea7218f8f4fc2f35124748725969c0cb3dc645713d19684540b87c5af25bd17ce3dccd7ef4e05e42442
+  languageName: node
+  linkType: hard
+
+"conventional-changelog-conventionalcommits@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "conventional-changelog-conventionalcommits@npm:6.1.0"
+  dependencies:
+    compare-func: "npm:^2.0.0"
+  checksum: b313f5c0160d109f58d976566e1331ede3a25ab19fbf43f86763b280659195de00a68551f7f3930bf1cbf39a5e707d94f2a25b79996e59043fa9ee0bed68a79f
   languageName: node
   linkType: hard
 
@@ -8341,7 +8350,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"word-wrap@npm:^1.0.3, word-wrap@npm:^1.2.3":
+"word-wrap@npm:^1.0.3, word-wrap@npm:^1.2.5":
   version: 1.2.5
   resolution: "word-wrap@npm:1.2.5"
   checksum: e0e4a1ca27599c92a6ca4c32260e8a92e8a44f4ef6ef93f803f8ed823f486e0889fc0b93be4db59c8d51b3064951d25e43d434e95dc8c960cc3a63d65d00ba20
