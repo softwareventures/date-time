@@ -1031,7 +1031,7 @@ __metadata:
     "@types/node": "npm:17.0.45"
     "@typescript-eslint/eslint-plugin": "npm:5.54.1"
     "@typescript-eslint/parser": "npm:5.54.1"
-    ava: "npm:5.2.0"
+    ava: "npm:5.3.1"
     commitizen: "npm:4.3.0"
     eslint: "npm:8.36.0"
     eslint-config-prettier: "npm:8.7.0"
@@ -1484,7 +1484,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.4.1, acorn@npm:^8.8.1, acorn@npm:^8.9.0":
+"acorn@npm:^8.4.1, acorn@npm:^8.8.2, acorn@npm:^8.9.0":
   version: 8.11.3
   resolution: "acorn@npm:8.11.3"
   bin:
@@ -1810,11 +1810,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ava@npm:5.2.0":
-  version: 5.2.0
-  resolution: "ava@npm:5.2.0"
+"ava@npm:5.3.1":
+  version: 5.3.1
+  resolution: "ava@npm:5.3.1"
   dependencies:
-    acorn: "npm:^8.8.1"
+    acorn: "npm:^8.8.2"
     acorn-walk: "npm:^8.2.0"
     ansi-styles: "npm:^6.2.1"
     arrgv: "npm:^1.0.2"
@@ -1824,7 +1824,7 @@ __metadata:
     chalk: "npm:^5.2.0"
     chokidar: "npm:^3.5.3"
     chunkd: "npm:^2.0.1"
-    ci-info: "npm:^3.7.1"
+    ci-info: "npm:^3.8.0"
     ci-parallel-vars: "npm:^1.0.1"
     clean-yaml-object: "npm:^0.1.0"
     cli-truncate: "npm:^3.1.0"
@@ -1833,10 +1833,9 @@ __metadata:
     concordance: "npm:^5.0.4"
     currently-unhandled: "npm:^0.4.1"
     debug: "npm:^4.3.4"
-    del: "npm:^7.0.0"
     emittery: "npm:^1.0.1"
     figures: "npm:^5.0.0"
-    globby: "npm:^13.1.3"
+    globby: "npm:^13.1.4"
     ignore-by-default: "npm:^2.1.0"
     indent-string: "npm:^5.0.0"
     is-error: "npm:^2.2.2"
@@ -1852,13 +1851,12 @@ __metadata:
     plur: "npm:^5.1.0"
     pretty-ms: "npm:^8.0.0"
     resolve-cwd: "npm:^3.0.0"
-    slash: "npm:^3.0.0"
     stack-utils: "npm:^2.0.6"
     strip-ansi: "npm:^7.0.1"
     supertap: "npm:^3.0.1"
     temp-dir: "npm:^3.0.0"
-    write-file-atomic: "npm:^5.0.0"
-    yargs: "npm:^17.6.2"
+    write-file-atomic: "npm:^5.0.1"
+    yargs: "npm:^17.7.2"
   peerDependencies:
     "@ava/typescript": "*"
   peerDependenciesMeta:
@@ -1866,7 +1864,7 @@ __metadata:
       optional: true
   bin:
     ava: entrypoints/cli.mjs
-  checksum: 4f9f8ce249da1470757d3b9f01ff36e8329e74c95f1d27030487f04448d72f893b7c634d7cbcecb3f6678cc9925340a88bc6a1b18e8742e533167e53ff11ef96
+  checksum: 262cbdb9e8c3ce7177be91b92ba521e9d5aef577dcc8095cc591f86baaa291b91c88925928f5d26832c4d1b381a6ae99f2e8804077c592d0d32322c1212605cc
   languageName: node
   linkType: hard
 
@@ -2176,7 +2174,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ci-info@npm:^3.7.1":
+"ci-info@npm:^3.8.0":
   version: 3.9.0
   resolution: "ci-info@npm:3.9.0"
   checksum: 6f0109e36e111684291d46123d491bc4e7b7a1934c3a20dea28cba89f1d4a03acd892f5f6a81ed3855c38647e285a150e3c9ba062e38943bef57fee6c1554c3a
@@ -2841,22 +2839,6 @@ __metadata:
     rimraf: "npm:^3.0.2"
     slash: "npm:^3.0.0"
   checksum: 8a095c5ccade42c867a60252914ae485ec90da243d735d1f63ec1e64c1cfbc2b8810ad69a29ab6326d159d4fddaa2f5bad067808c42072351ec458efff86708f
-  languageName: node
-  linkType: hard
-
-"del@npm:^7.0.0":
-  version: 7.1.0
-  resolution: "del@npm:7.1.0"
-  dependencies:
-    globby: "npm:^13.1.2"
-    graceful-fs: "npm:^4.2.10"
-    is-glob: "npm:^4.0.3"
-    is-path-cwd: "npm:^3.0.0"
-    is-path-inside: "npm:^4.0.0"
-    p-map: "npm:^5.5.0"
-    rimraf: "npm:^3.0.2"
-    slash: "npm:^4.0.0"
-  checksum: 5ad2777b69e386b414ba77f5eba23bb52422c096f4c084c0d1d829ee4776d1a025a6f69765906907c4137026e9bd071ee9d422fd531b1417ef546adc7eb6fada
   languageName: node
   linkType: hard
 
@@ -3967,7 +3949,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globby@npm:^13.1.2, globby@npm:^13.1.3":
+"globby@npm:^13.1.4":
   version: 13.2.2
   resolution: "globby@npm:13.2.2"
   dependencies:
@@ -4647,24 +4629,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-path-cwd@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "is-path-cwd@npm:3.0.0"
-  checksum: 8135b789c74e137501ca33b11a846c32d160c517037c0ce390004a98335e010b9712792d97c73d9e98a5ecbcfd03589a81e95c72e1c05014a69fead963a02753
-  languageName: node
-  linkType: hard
-
 "is-path-inside@npm:^3.0.2, is-path-inside@npm:^3.0.3":
   version: 3.0.3
   resolution: "is-path-inside@npm:3.0.3"
   checksum: cf7d4ac35fb96bab6a1d2c3598fe5ebb29aafb52c0aaa482b5a3ed9d8ba3edc11631e3ec2637660c44b3ce0e61a08d54946e8af30dec0b60a7c27296c68ffd05
-  languageName: node
-  linkType: hard
-
-"is-path-inside@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "is-path-inside@npm:4.0.0"
-  checksum: 51188d7e2b1d907a9a5f7c18d99a90b60870b951ed87cf97595d9aaa429d4c010652c3350bcbf31182e7f4b0eab9a1860b43e16729b13cb1a44baaa6cdb64c46
   languageName: node
   linkType: hard
 
@@ -8414,7 +8382,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"write-file-atomic@npm:^5.0.0":
+"write-file-atomic@npm:^5.0.1":
   version: 5.0.1
   resolution: "write-file-atomic@npm:5.0.1"
   dependencies:
@@ -8481,7 +8449,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs@npm:^17.0.0, yargs@npm:^17.6.2":
+"yargs@npm:^17.0.0, yargs@npm:^17.7.2":
   version: 17.7.2
   resolution: "yargs@npm:17.7.2"
   dependencies:
