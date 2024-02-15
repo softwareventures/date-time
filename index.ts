@@ -22,6 +22,8 @@ export interface DateTime {
 
     /** The year.
      *
+     * Should be an integer.
+     *
      * Positive values represent years in the Common Era (CE/AD). For example
      * `2024` represents 2024 CE, the year this module was first published to
      * npm.
@@ -34,10 +36,10 @@ export interface DateTime {
      * 1 BCE was immediately followed by 1 CE. */
     year: number;
 
-    /** The month of the year. Should be in the range `1`-`12`. */
+    /** The month of the year. Should be an integer in the range `1`-`12`. */
     month: number;
 
-    /** The day of the month. Should be in the range `1`-`31`. */
+    /** The day of the month. Should be an integer in the range `1`-`31`. */
     day: number;
 
     /** The hours component of the time of day. Should be an integer in the
