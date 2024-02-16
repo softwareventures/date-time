@@ -578,29 +578,41 @@ export function earliestFn(b: DateTimeOptions): (a: DateTimeOptions) => DateTime
  * Curried variant of {@link earliestDateTime}. */
 export const earliestDateTimeFn = earliestFn;
 
-/** Compares two {@link DateTime}s and returns the later of the two. */
-export function latest<T extends DateTimeOptions, U extends DateTimeOptions>(a: T, b: U): T | U {
-    return before(a, b) ? b : a;
+/** Compares two {@link DateTime}s and returns the later of the two.
+ *
+ * @throws {Error} if both specified `DateTime`s contain numeric fields that
+ *   are non-finite. */
+export function latest(a: DateTimeOptions, b: DateTimeOptions): DateTime {
+    const as = toReferenceSeconds(a);
+    const bs = toReferenceSeconds(b);
+    return fromReferenceSeconds(as > bs ? as : bs);
 }
 
 /** Compares two {@link DateTime}s and returns the later of the two.
  *
  * Alias of {@link latest}, useful for disambiguation from similar functions
- * that operate on other date/time types. */
+ * that operate on other date/time types.
+ *
+ * @throws {Error} if both specified `DateTime`s contain numeric fields that
+ *   are non-finite. */
 export const latestDateTime = latest;
 
 /** Compares two {@link DateTime}s and returns the later of the two.
  *
- * Curried variant of {@link latest}. */
-export function latestFn<T extends DateTimeOptions, U extends DateTimeOptions>(
-    b: U
-): (a: T) => T | U {
+ * Curried variant of {@link latest}.
+ *
+ * @throws {Error} if both specified `DateTime`s contain numeric fields that
+ *   are non-finite. */
+export function latestFn(b: DateTimeOptions): (a: DateTimeOptions) => DateTime {
     return a => latest(a, b);
 }
 
 /** Compares two {@link DateTime}s and returns the later of the two.
  *
- * Curried variant of {@link latestDateTime}. */
+ * Curried variant of {@link latestDateTime}.
+ *
+ * @throws {Error} if both specified `DateTime`s contain numeric fields that
+ *   are non-finite. */
 export const latestDateTimeFn = latestFn;
 
 /** Returns the current date and time, according to UTC. */
