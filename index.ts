@@ -256,7 +256,7 @@ export const isDateTimeValid = isValid;
 /** Asserts that the specified {@link DateTime} object represents a valid date
  * and time.
  *
- * {@DateTime}s returned by functions in this library are always valid.
+ * {@link DateTime}s returned by functions in this library are always valid.
  *
  * @throws {Error} if any of the `year`, `month`, `day`, `hours`, or `minutes`
  * fields are non-integers or outside the valid range, or if the `seconds`
@@ -270,7 +270,7 @@ export function validate(dateTime: DateTimeOptions): void {
 /** Asserts that the specified {@link DateTime} object represents a valid date
  * and time.
  *
- * {@DateTime}s returned by functions in this library are always valid.
+ * {@link DateTime}s returned by functions in this library are always valid.
  *
  * Alias of {@link validate}, useful for disambiguation from similar functions
  * that operate on other types.
