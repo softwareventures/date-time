@@ -26,7 +26,7 @@
     "node": "^18 || >=20"
   },
   "dependencies": {
-    "@softwareventures/date": "^4.1.0",
+    "@softwareventures/date": "^4.1.0 || ^5.0.0",
     "@softwareventures/format-date-time": "^1.0.0",
     "@softwareventures/nullable": "^3.2.0",
     "@softwareventures/ordered": "^2.0.0",
