@@ -4,8 +4,8 @@
   "description": "Data types and functions for working with abstract date-times",
   "keywords": [
     "TypeScript",
-    "date-time",
     "date",
+    "date-time",
     "time"
   ],
   "author": "Daniel Cassidy <mail@danielcassidy.me.uk>",
