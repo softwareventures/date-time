@@ -87,7 +87,7 @@
   "release": {
     "extends": "@softwareventures/semantic-release-config"
   },
-  "packageManager": "yarn@4.1.0",
+  "packageManager": "yarn@4.2.2",
   "publishConfig": {
     "access": "public"
   }
